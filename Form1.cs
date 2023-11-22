@@ -164,7 +164,7 @@ namespace BaseEditor
                             db.Products.Remove(product);
                             db.SaveChanges();
 
-                            //очистка списков
+                            //очистка списков 
                             productsForChange.Clear();
                             productsForDelete.Clear();
                         }
