@@ -58,6 +58,12 @@
             textBox9 = new TextBox();
             productBindingSource = new BindingSource(components);
             label1 = new Label();
+            groupBox2 = new GroupBox();
+            buttonOkPurch = new Button();
+            textBox10 = new TextBox();
+            label12 = new Label();
+            label13 = new Label();
+            dateTimePicker2 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)productBindingSource8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource6).BeginInit();
@@ -67,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)productBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // textBox5
@@ -239,7 +246,7 @@
             // 
             // buttonOK
             // 
-            buttonOK.Location = new Point(209, 195);
+            buttonOK.Location = new Point(82, 354);
             buttonOK.Name = "buttonOK";
             buttonOK.Size = new Size(139, 39);
             buttonOK.TabIndex = 40;
@@ -249,7 +256,9 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(906, 195);
+            buttonCancel.Enabled = false;
+            buttonCancel.FlatStyle = FlatStyle.System;
+            buttonCancel.Location = new Point(522, 354);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(123, 39);
             buttonCancel.TabIndex = 41;
@@ -277,6 +286,67 @@
             label1.TabIndex = 43;
             label1.Text = "Id";
             // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = SystemColors.ActiveCaption;
+            groupBox2.Controls.Add(buttonOkPurch);
+            groupBox2.Controls.Add(textBox10);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(dateTimePicker2);
+            groupBox2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.ForeColor = SystemColors.ControlText;
+            groupBox2.Location = new Point(741, 168);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(555, 240);
+            groupBox2.TabIndex = 44;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Добавить новую закупку";
+            // 
+            // buttonOkPurch
+            // 
+            buttonOkPurch.Location = new Point(315, 186);
+            buttonOkPurch.Name = "buttonOkPurch";
+            buttonOkPurch.Size = new Size(125, 36);
+            buttonOkPurch.TabIndex = 41;
+            buttonOkPurch.Text = "ОК";
+            buttonOkPurch.UseVisualStyleBackColor = true;
+            buttonOkPurch.Click += buttonOkPurch_Click;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(315, 97);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(125, 30);
+            textBox10.TabIndex = 3;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(315, 58);
+            label12.Name = "label12";
+            label12.Size = new Size(103, 23);
+            label12.TabIndex = 2;
+            label12.Text = "Количество";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(22, 52);
+            label13.Name = "label13";
+            label13.Size = new Size(47, 23);
+            label13.TabIndex = 1;
+            label13.Text = "Дата";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dateTimePicker2.Location = new Point(22, 97);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(250, 30);
+            dateTimePicker2.TabIndex = 0;
+            dateTimePicker2.Value = new DateTime(2023, 11, 24, 0, 0, 0, 0);
+            // 
             // FrmEditProduct
             // 
             AcceptButton = buttonOK;
@@ -284,6 +354,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonCancel;
             ClientSize = new Size(1320, 450);
+            Controls.Add(groupBox2);
             Controls.Add(label1);
             Controls.Add(textBox9);
             Controls.Add(buttonCancel);
@@ -315,6 +386,8 @@
             ((System.ComponentModel.ISupportInitialize)productBindingSource5).EndInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource4).EndInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -350,5 +423,11 @@
         private BindingSource productBindingSource5;
         private BindingSource productBindingSource4;
         private BindingSource productBindingSource;
+        private GroupBox groupBox2;
+        private TextBox textBox10;
+        private Label label12;
+        private Label label13;
+        private DateTimePicker dateTimePicker2;
+        private Button buttonOkPurch;
     }
 }

@@ -43,6 +43,11 @@
             tabPage1 = new TabPage();
             label1 = new Label();
             tabPage2 = new TabPage();
+            groupBox1 = new GroupBox();
+            textBox7 = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             textBox5 = new TextBox();
             textBox2 = new TextBox();
             label9 = new Label();
@@ -83,6 +88,7 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            groupBox1.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             contextMenuStripForGrid.SuspendLayout();
@@ -147,6 +153,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(textBox5);
             tabPage2.Controls.Add(textBox2);
             tabPage2.Controls.Add(label9);
@@ -173,6 +180,53 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Добавить новый товар";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(650, 148);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(485, 246);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Сведения о закупке";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(315, 97);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(125, 30);
+            textBox7.TabIndex = 3;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(315, 58);
+            label11.Name = "label11";
+            label11.Size = new Size(103, 23);
+            label11.TabIndex = 2;
+            label11.Text = "Количество";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(22, 52);
+            label10.Name = "label10";
+            label10.Size = new Size(47, 23);
+            label10.TabIndex = 1;
+            label10.Text = "Дата";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(16, 95);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 30);
+            dateTimePicker1.TabIndex = 0;
+            dateTimePicker1.Value = new DateTime(2023, 11, 24, 0, 0, 0, 0);
             // 
             // textBox5
             // 
@@ -252,9 +306,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(8, 195);
+            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(17, 318);
             button3.Name = "button3";
-            button3.Size = new Size(148, 44);
+            button3.Size = new Size(226, 76);
             button3.TabIndex = 12;
             button3.Text = "Добавить";
             button3.UseVisualStyleBackColor = true;
@@ -532,6 +587,8 @@
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -551,6 +608,12 @@
                 if (c is TextBox) ((TextBox)c).Text = null;
                 if (c is CheckBox) ((CheckBox)c).CheckState = CheckState.Unchecked;
 
+            }
+
+            foreach (Control x in groupBox1.Controls)
+            {
+                if (x is TextBox) ((TextBox)x).Text = null;
+                
             }
 
         }
@@ -599,5 +662,10 @@
         private ToolStripMenuItem MenuItemEditProduct;
         private ToolStripMenuItem MenuItemDeleteProduct;
         private TabPage tabPage3;
+        private GroupBox groupBox1;
+        private TextBox textBox7;
+        private Label label11;
+        private Label label10;
+        private DateTimePicker dateTimePicker1;
     }
 }

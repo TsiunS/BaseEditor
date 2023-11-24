@@ -27,7 +27,7 @@ namespace BaseEditor
 
         }
 
-        // Добавление
+        // Добавление нового товара вручную
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -45,8 +45,17 @@ namespace BaseEditor
                     Limit = Convert.ToDecimal(textBox5.Text),
                 };
 
+                db.Products.AddRange(product);
 
-                db.Products.Add(product);
+                Purchase purchases = new Purchase()
+                {
+                    Date = dateTimePicker1.Value,
+                    Quantity = Convert.ToDecimal(textBox7.Text),
+                    Product = product
+
+                };
+
+                db.AddRange(purchases);
                 db.SaveChanges();
             }
 
@@ -92,8 +101,9 @@ namespace BaseEditor
             using (SurpriseStoreListContext db = new SurpriseStoreListContext())
             {
 
-                var products = db.Products.Where(p => EF.Functions.Like(p.Name!, "%" + textBox16.Text + "%"));
+                var products = db.Products.Include(u => u.Purchases).Where(p => EF.Functions.Like(p.Name!, "%" + textBox16.Text + "%"));
 
+              
                 dataGridView1.DataSource = products.ToList();
 
                 productsForChange = products.ToList();
@@ -110,7 +120,7 @@ namespace BaseEditor
         }
 
 
-
+        // клик по строке ПКМ и выбор меню редактирования товара
         private void MenuItemEditProduct_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows = dataGridView1.SelectedRows;
@@ -131,8 +141,8 @@ namespace BaseEditor
                 editProduct.LoadSelectedRow();
 
                 editProduct.Show();
-                productsForChange.Clear();
-                productsForDelete.Clear();
+               // productsForChange.Clear();
+               // productsForDelete.Clear();
             }
         }
 
@@ -165,8 +175,8 @@ namespace BaseEditor
                             db.SaveChanges();
 
                             //очистка списков 
-                            productsForChange.Clear();
-                            productsForDelete.Clear();
+                           // productsForChange.Clear();
+                         //   productsForDelete.Clear();
                         }
 
                     }

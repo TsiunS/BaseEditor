@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace BaseEditor
     public partial class FrmEditProduct : Form
     {
 
-      
+
         public Product EditedProduct { get; set; }
 
 
@@ -24,7 +25,7 @@ namespace BaseEditor
 
         public void LoadSelectedRow()
         {
-            // Помещаем в источник данных экземпляр для редактируемой книги
+            // Помещаем в источник данных экземпляр для редактируемого товара
             productBindingSource.Add(EditedProduct);
             productBindingSource1.Add(EditedProduct);
             productBindingSource2.Add(EditedProduct);
@@ -41,7 +42,7 @@ namespace BaseEditor
             Close();
         }
 
-       
+
         private void buttonOK_Click_1(object sender, EventArgs e)
         {
             using (SurpriseStoreListContext db = new SurpriseStoreListContext())
@@ -69,6 +70,49 @@ namespace BaseEditor
             MessageBox.Show("Изменения внесены");
             Close();
         }
+
+        // Добавление новой закупки по товару
+
+        /*using (var context = new BloggingContext())
+{
+    var blog = context.Blogs.Include(b => b.Posts).First();
+    var post = new Post { Title = "Intro to EF Core" };
+
+    blog.Posts.Add(post);
+    context.SaveChanges();
+}
+         */
+        private void buttonOkPurch_Click(object sender, EventArgs e)
+        {
+            using (SurpriseStoreListContext db = new SurpriseStoreListContext())
+            {
+                //получаем объект
+
+                var product = db.Products.Include(u => u.Purchases).FirstOrDefault(p => p.Id.ToString() == textBox9.Text);
+
+
+                Purchase purchase = new Purchase()
+                {
+                    Date = dateTimePicker2.Value,
+                    Quantity = Convert.ToDecimal(textBox10.Text),
+
+                };
+
+                product.Purchases.Add(purchase);
+
+                db.SaveChanges();
+
+            }
+
+            MessageBox.Show("Закупка добавлена, остатки обновлены");
+            Close();
+        }
+
+
+
+
+
+
     }
 
 }

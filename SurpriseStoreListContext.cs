@@ -16,15 +16,18 @@ public partial class SurpriseStoreListContext : DbContext
     }
 
     public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Purchase> Purchases { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=C:\\\\\\\\Users\\\\\\\\Sergey\\\\\\\\Documents\\\\\\\\Base\\\\\\\\SurpriseStoreList.db");
+        optionsBuilder.UseSqlite("Data Source=C:\\Users\\Sergey\\Documents\\Base\\SurpriseStore\\SurpriseStoreList.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         OnModelCreatingPartial(modelBuilder);
+
+      
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

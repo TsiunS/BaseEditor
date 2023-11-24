@@ -22,4 +22,6 @@ public partial class Product
     public string? Group { get; set; }
 
     public string? Provider { get; set; }
+
+    public List<Purchase>? Purchases { get; set; }
 }
