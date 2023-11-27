@@ -3,6 +3,7 @@ using System;
 using BaseEditor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseEditor.Migrations
 {
     [DbContext(typeof(SurpriseStoreListContext))]
-    partial class SurpriseStoreListContextModelSnapshot : ModelSnapshot
+    [Migration("20231126184934_SalesAdded")]
+    partial class SalesAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");

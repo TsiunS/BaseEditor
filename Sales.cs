@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BaseEditor
 {
-    public class Purchase
+    public class Sales
     {
+
         [Key] public int Id { get; set; }
 
         [ForeignKey("Product")]
@@ -18,25 +19,18 @@ namespace BaseEditor
         public Product? Product { get; set; }
 
         /// <summary>
-        /// Дата закупки
+        /// Дата продажи
         /// </summary>
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Колличество закупленного товара
+        /// Всего количество проданого товара
         /// </summary>
-        public decimal Quantity { get; set; }
+        public decimal TotalSold { get; set; }
 
         /// <summary>
-        /// Цена за единицу
+        /// Сумма продажи общая
         /// </summary>
-        public decimal UnitPrice { get; set; }
-
-        /// <summary>
-        /// Сумма закупки
-        /// </summary>
-        public decimal SumPurchase { get; set; }
-
-       
+        public decimal Sum { get; set; }
     }
 }

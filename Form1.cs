@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Text;
 using System.Windows.Forms;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -103,7 +104,7 @@ namespace BaseEditor
 
                 var products = db.Products.Include(u => u.Purchases).Where(p => EF.Functions.Like(p.Name!, "%" + textBox16.Text + "%"));
 
-              
+
                 dataGridView1.DataSource = products.ToList();
 
                 productsForChange = products.ToList();
@@ -141,8 +142,8 @@ namespace BaseEditor
                 editProduct.LoadSelectedRow();
 
                 editProduct.Show();
-               // productsForChange.Clear();
-               // productsForDelete.Clear();
+                // productsForChange.Clear();
+                // productsForDelete.Clear();
             }
         }
 
@@ -175,8 +176,8 @@ namespace BaseEditor
                             db.SaveChanges();
 
                             //очистка списков 
-                           // productsForChange.Clear();
-                         //   productsForDelete.Clear();
+                            // productsForChange.Clear();
+                            //   productsForDelete.Clear();
                         }
 
                     }
@@ -184,7 +185,7 @@ namespace BaseEditor
             }
         }
 
-
+       
     }
 
 }

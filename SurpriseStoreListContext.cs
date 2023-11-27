@@ -17,6 +17,7 @@ public partial class SurpriseStoreListContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
     public virtual DbSet<Purchase> Purchases { get; set; }
+    public virtual DbSet<Sales> Sales { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
