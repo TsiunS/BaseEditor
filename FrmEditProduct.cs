@@ -95,7 +95,8 @@ namespace BaseEditor
                 {
                     Date = dateTimePicker2.Value,
                     Quantity = Convert.ToDecimal(textBox10.Text),
-
+                    UnitPrice = Convert.ToDecimal(textBox11.Text),
+                    SumPurchase = Convert.ToDecimal(textBox10.Text) * Convert.ToDecimal(textBox11.Text)
                 };
 
                 product.Purchases.Add(purchase);

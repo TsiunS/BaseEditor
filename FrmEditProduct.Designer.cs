@@ -64,6 +64,8 @@
             label12 = new Label();
             label13 = new Label();
             dateTimePicker2 = new DateTimePicker();
+            label10 = new Label();
+            textBox11 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)productBindingSource8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource6).BeginInit();
@@ -289,6 +291,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ActiveCaption;
+            groupBox2.Controls.Add(textBox11);
+            groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(buttonOkPurch);
             groupBox2.Controls.Add(textBox10);
             groupBox2.Controls.Add(label12);
@@ -305,7 +309,7 @@
             // 
             // buttonOkPurch
             // 
-            buttonOkPurch.Location = new Point(315, 186);
+            buttonOkPurch.Location = new Point(372, 186);
             buttonOkPurch.Name = "buttonOkPurch";
             buttonOkPurch.Size = new Size(125, 36);
             buttonOkPurch.TabIndex = 41;
@@ -315,7 +319,7 @@
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(315, 97);
+            textBox10.Location = new Point(374, 73);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(125, 30);
             textBox10.TabIndex = 3;
@@ -323,7 +327,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(315, 58);
+            label12.Location = new Point(372, 35);
             label12.Name = "label12";
             label12.Size = new Size(103, 23);
             label12.TabIndex = 2;
@@ -332,7 +336,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(22, 52);
+            label13.Location = new Point(22, 35);
             label13.Name = "label13";
             label13.Size = new Size(47, 23);
             label13.TabIndex = 1;
@@ -341,11 +345,27 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker2.Location = new Point(22, 97);
+            dateTimePicker2.Location = new Point(22, 73);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 30);
             dateTimePicker2.TabIndex = 0;
             dateTimePicker2.Value = new DateTime(2023, 11, 24, 0, 0, 0, 0);
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(22, 138);
+            label10.Name = "label10";
+            label10.Size = new Size(101, 23);
+            label10.TabIndex = 42;
+            label10.Text = "Цена за ед.";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(147, 131);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(125, 30);
+            textBox11.TabIndex = 43;
             // 
             // FrmEditProduct
             // 
@@ -429,5 +449,7 @@
         private Label label13;
         private DateTimePicker dateTimePicker2;
         private Button buttonOkPurch;
+        private TextBox textBox11;
+        private Label label10;
     }
 }

@@ -37,9 +37,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            button1 = new Button();
             button2 = new Button();
             tabControl1 = new TabControl();
+            tabPage5 = new TabPage();
+            button5 = new Button();
+            button4 = new Button();
+            button1 = new Button();
+            label12 = new Label();
             tabPage1 = new TabPage();
             label1 = new Label();
             tabPage2 = new TabPage();
@@ -85,7 +89,10 @@
             button6 = new Button();
             textBox16 = new TextBox();
             tabPage3 = new TabPage();
+            dateTimePicker2 = new DateTimePicker();
+            информацияToolStripMenuItem = new ToolStripMenuItem();
             tabControl1.SuspendLayout();
+            tabPage5.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -93,29 +100,23 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             contextMenuStripForGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            tabPage3.SuspendLayout();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(6, 357);
-            button1.Name = "button1";
-            button1.Size = new Size(249, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Удалить предыдущий отчет";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
             // 
             // button2
             // 
-            button2.Location = new Point(453, 357);
+            button2.Font = new Font("XO Thames", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(424, 284);
             button2.Name = "button2";
-            button2.Size = new Size(246, 29);
+            button2.Size = new Size(351, 72);
             button2.TabIndex = 3;
             button2.Text = "Обновить остатки";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // tabControl1
             // 
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage4);
@@ -127,29 +128,91 @@
             tabControl1.Size = new Size(1192, 450);
             tabControl1.TabIndex = 5;
             // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(button5);
+            tabPage5.Controls.Add(button4);
+            tabPage5.Controls.Add(button1);
+            tabPage5.Controls.Add(label12);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(1184, 417);
+            tabPage5.TabIndex = 5;
+            tabPage5.Text = "Обновить ЗАКУПКИ";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(90, 315);
+            button5.Name = "button5";
+            button5.Size = new Size(201, 57);
+            button5.TabIndex = 8;
+            button5.Text = "загрузить тест БД";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Black;
+            button4.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.OrangeRed;
+            button4.Location = new Point(923, 320);
+            button4.Name = "button4";
+            button4.Size = new Size(135, 52);
+            button4.TabIndex = 7;
+            button4.Text = "Удалить всё";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("XO Thames", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(411, 273);
+            button1.Name = "button1";
+            button1.Size = new Size(351, 72);
+            button1.TabIndex = 6;
+            button1.Text = "Обновить закупки";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label12
+            // 
+            label12.BackColor = SystemColors.GradientInactiveCaption;
+            label12.BorderStyle = BorderStyle.FixedSingle;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = SystemColors.ActiveCaptionText;
+            label12.Location = new Point(21, 3);
+            label12.Margin = new Padding(3, 0, 3, 1);
+            label12.Name = "label12";
+            label12.Size = new Size(1134, 238);
+            label12.TabIndex = 5;
+            label12.Text = resources.GetString("label12.Text");
+            // 
             // tabPage1
             // 
             tabPage1.Controls.Add(label1);
-            tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(button2);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1184, 417);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Обновить остатки";
+            tabPage1.Text = "Обновить Остатки";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
+            label1.BackColor = Color.LightCoral;
             label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(19, 28);
             label1.Margin = new Padding(3, 0, 3, 1);
             label1.Name = "label1";
-            label1.Size = new Size(728, 99);
+            label1.Size = new Size(1134, 238);
             label1.TabIndex = 4;
             label1.Text = resources.GetString("label1.Text");
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
@@ -517,9 +580,9 @@
             // contextMenuStripForGrid
             // 
             contextMenuStripForGrid.ImageScalingSize = new Size(20, 20);
-            contextMenuStripForGrid.Items.AddRange(new ToolStripItem[] { MenuItemEditProduct, MenuItemDeleteProduct });
+            contextMenuStripForGrid.Items.AddRange(new ToolStripItem[] { MenuItemEditProduct, MenuItemDeleteProduct, информацияToolStripMenuItem });
             contextMenuStripForGrid.Name = "contextMenuStripForGrid";
-            contextMenuStripForGrid.Size = new Size(225, 52);
+            contextMenuStripForGrid.Size = new Size(225, 104);
             // 
             // MenuItemEditProduct
             // 
@@ -566,6 +629,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dateTimePicker2);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -573,6 +637,20 @@
             tabPage3.TabIndex = 4;
             tabPage3.Text = "Анализ";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(746, 185);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.TabIndex = 0;
+            // 
+            // информацияToolStripMenuItem
+            // 
+            информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
+            информацияToolStripMenuItem.Size = new Size(224, 24);
+            информацияToolStripMenuItem.Text = "Информация";
+            информацияToolStripMenuItem.Click += MenuItemAnaliticProduct_Clic;
             // 
             // Form1
             // 
@@ -584,6 +662,7 @@
             Name = "Form1";
             Text = "Form1";
             tabControl1.ResumeLayout(false);
+            tabPage5.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -594,6 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             contextMenuStripForGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            tabPage3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -619,7 +699,6 @@
         }
 
         #endregion
-        private Button button1;
         private Button button2;
         private TabControl tabControl1;
         private TabPage tabPage1;
@@ -667,5 +746,12 @@
         private Label label11;
         private Label label10;
         private DateTimePicker dateTimePicker1;
+        private TabPage tabPage5;
+        private Label label12;
+        private Button button1;
+        private Button button4;
+        private Button button5;
+        private DateTimePicker dateTimePicker2;
+        private ToolStripMenuItem информацияToolStripMenuItem;
     }
 }
